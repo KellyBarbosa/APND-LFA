@@ -1,8 +1,6 @@
 import json
 import time
 
-inicio = time.time()
-
 def readData():
     fData = open('data.json')
     data = json.load(fData)
@@ -93,6 +91,7 @@ def testaPalavra(palavra):
                     transicao.append((estado[1], aux_palavra[1:], novo_aux_pilha))
 
 for palavra in palavras: 
+    inicio = time.time()
     if  testaPalavra(palavra):
         print('S')
     else:
