@@ -1,4 +1,7 @@
 import json
+import time
+
+inicio = time.time()
 
 def readData():
     fData = open('data.json')
@@ -94,3 +97,5 @@ for palavra in palavras:
         print('S')
     else:
         print('N')
+    fim = time.time()
+    print(fim - inicio)
