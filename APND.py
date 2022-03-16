@@ -10,30 +10,22 @@ data = readData()
 
 apnd = {}
 
-#estados = input().split(" ")
 estados = data["estados"].split(" ")
 for estado in estados:
     apnd[estado] = {}
 
-#simbolos = input().split(" ")
 simbolos = data["simbolos"].split(" ")
-#simbPilha = input().split(" ")
 simbPilha = data["simbPilha"].split(" ")
-#nTransicoes = int(input())
 nTransicoes = int(data["nTransicoes"])
 
 for i in range(0,nTransicoes):
-    #o, cA, cP, d, iP = input().split(" ")
     o, cA, cP, d, iP = data["quintuplas"][i].split(" ")
     if cA not in apnd[o]:
         apnd[o][cA] = []
     apnd[o][cA].append([cP, d, iP])
 
-#estadoInicial = input()
 estadoInicial = data["estadoInicial"]
-#estadosFinais = input().split(" ")
 estadosFinais = data["estadosFinais"].split(" ")
-#palavras = input().split(" ")
 palavras = data["palavras"].split(" ")
 
 def testaPalavra(palavra):
