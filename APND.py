@@ -1,7 +1,6 @@
 import json
+from statistics import mean
 import time
-
-inicio = time.time()
 
 def readData():
     fData = open('data.json')
@@ -93,10 +92,15 @@ def testaPalavra(palavra):
                     transicao.append((estado[1], aux_palavra[1:], novo_aux_pilha))
 
 for palavra in palavras: 
-    if  testaPalavra(palavra):
+    tempo = []
+    for t in range(0, 10000):
+        inicio = time.time()
+        resultado = testaPalavra(palavra)
+        fim = time.time()
+        tempo.append((fim - inicio))
+
+    if  resultado:
         print('S')
     else:
-        print('N')
-    fim = time.time()
-    print(fim - inicio)
-
+        print('N') 
+    print(sum(tempo)/len(tempo))
