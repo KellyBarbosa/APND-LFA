@@ -1,5 +1,4 @@
 import json
-from statistics import mean
 import time
 
 def readData():
